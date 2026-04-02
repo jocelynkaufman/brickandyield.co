@@ -27,7 +27,7 @@ export default function Pricing() {
               </h3>
               <div className="mt-4 flex items-baseline gap-1">
                 <span className="font-[family-name:var(--font-heading)] text-5xl text-dark-text">
-                  $99
+                  $69
                 </span>
                 <span className="text-dark-text/60">/mo</span>
               </div>
@@ -51,12 +51,12 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link
+              <a
                 href="#join"
                 className="mt-8 block w-full text-center rounded-lg bg-warbler px-6 py-3.5 font-semibold text-dark-text transition-colors hover:bg-warbler/90"
               >
                 Join the Waitlist
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ export default function Pricing() {
               </h3>
               <div className="mt-4 flex items-baseline gap-1">
                 <span className="font-[family-name:var(--font-heading)] text-5xl text-dark-text/60">
-                  $149–199
+                  $99–149
                 </span>
                 <span className="text-dark-text/40">/mo</span>
               </div>

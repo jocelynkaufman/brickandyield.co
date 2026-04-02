@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 export default function JoinForm() {
   return (
@@ -11,24 +12,26 @@ export default function JoinForm() {
           Join the waitlist and lock in the founder&apos;s rate. We&apos;ll reach out to get you set up.
         </p>
 
-        {/* GHL Form Embed — Replace src with your actual GHL form URL */}
-        {/*
-          // TODO: Replace GHL_FORM_URL_HERE with your GoHighLevel form embed URL
-          //
-          // GHL FORM CHECKBOX TEXT (add this as a checkbox field in your GHL form):
-          // ☐ "I agree to receive text messages from Brick and Yield LLC regarding
-          //    real estate technology services. Message frequency varies. Msg & data
-          //    rates may apply. Reply STOP to opt out. Reply HELP for help."
-          // ☐ "I agree to the Terms of Service and Privacy Policy."
-        */}
         <div className="w-full max-w-lg mx-auto mt-10">
           <iframe
-            src="GHL_FORM_URL_HERE"
-            style={{ width: "100%", height: "600px", border: "none" }}
-            title="Join Waitlist"
-            loading="lazy"
+            src="https://api.leadconnectorhq.com/widget/form/ss6uUK9BuwAAvyZUHAsd"
+            style={{ width: "100%", height: "100%", border: "none", borderRadius: "3px" }}
+            id="inline-ss6uUK9BuwAAvyZUHAsd"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Waitlist"
+            data-height="635"
+            data-layout-iframe-id="inline-ss6uUK9BuwAAvyZUHAsd"
+            data-form-id="ss6uUK9BuwAAvyZUHAsd"
+            title="Waitlist"
           />
         </div>
+        <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
 
         <p className="mt-8 text-xs text-pitter-patter/80 max-w-lg mx-auto leading-relaxed">
           By submitting this form, you agree to receive text messages from Brick

@@ -2,18 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Terms", href: "/terms" },
-  { label: "Privacy", href: "/privacy" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  // On non-home pages, always use the "scrolled" (dark-on-light) style
+  const useDarkText = !isHome || scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -24,7 +28,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        useDarkText
           ? "bg-white/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
@@ -34,7 +38,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`font-[family-name:var(--font-heading)] text-xl transition-colors ${
-              scrolled ? "text-oracle" : "text-warbler"
+              useDarkText ? "text-oracle" : "text-warbler"
             }`}
           >
             Brick &amp; Yield
@@ -43,22 +47,22 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.label}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 className={`text-sm font-medium transition-colors hover:text-warbler ${
-                  scrolled ? "text-dark-text" : "text-light-text"
+                  useDarkText ? "text-dark-text" : "text-light-text"
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="#join"
+            <a
+              href={isHome ? "#join" : "/#join"}
               className="rounded-lg bg-warbler px-5 py-2 text-sm font-semibold text-dark-text transition-colors hover:bg-warbler/90"
             >
               Join the Waitlist
-            </Link>
+            </a>
           </div>
 
           {/* Mobile hamburger */}
@@ -69,17 +73,17 @@ export default function Navbar() {
           >
             <span
               className={`block h-0.5 w-6 transition-all ${
-                scrolled ? "bg-dark-text" : "bg-light-text"
+                useDarkText ? "bg-dark-text" : "bg-light-text"
               } ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
             />
             <span
               className={`block h-0.5 w-6 transition-all ${
-                scrolled ? "bg-dark-text" : "bg-light-text"
+                useDarkText ? "bg-dark-text" : "bg-light-text"
               } ${menuOpen ? "opacity-0" : ""}`}
             />
             <span
               className={`block h-0.5 w-6 transition-all ${
-                scrolled ? "bg-dark-text" : "bg-light-text"
+                useDarkText ? "bg-dark-text" : "bg-light-text"
               } ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
             />
           </button>
@@ -91,22 +95,22 @@ export default function Navbar() {
         <div className="md:hidden bg-white border-t border-misty-aqua/30">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.label}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 className="text-dark-text text-sm font-medium hover:text-warbler"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="#join"
+            <a
+              href={isHome ? "#join" : "/#join"}
               className="rounded-lg bg-warbler px-5 py-2.5 text-sm font-semibold text-dark-text text-center transition-colors hover:bg-warbler/90"
               onClick={() => setMenuOpen(false)}
             >
               Join the Waitlist
-            </Link>
+            </a>
           </div>
         </div>
       )}
