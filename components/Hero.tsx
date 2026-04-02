@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Hero() {
   return (
     <section className="relative bg-oracle overflow-hidden">
@@ -17,18 +15,18 @@ export default function Hero() {
             your clients stay with you, not Zillow.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
+            <a
               href="#join"
               className="inline-flex items-center justify-center rounded-lg bg-warbler px-8 py-3.5 text-base font-semibold text-dark-text transition-colors hover:bg-warbler/90"
             >
               Join the Waitlist
-            </Link>
-            <Link
+            </a>
+            <a
               href="#how-it-works"
               className="inline-flex items-center justify-center rounded-lg border-2 border-pitter-patter px-8 py-3.5 text-base font-semibold text-pitter-patter transition-colors hover:bg-pitter-patter/10"
             >
               See How It Works
-            </Link>
+            </a>
           </div>
         </div>
       </div>

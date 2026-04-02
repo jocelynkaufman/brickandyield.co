@@ -18,15 +18,15 @@ export default function Footer() {
           {/* Links */}
           <div className="flex flex-col gap-3">
             <p className="text-sm font-semibold text-white mb-1">Links</p>
-            <Link href="#features" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
+            <a href="/#features" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               Features
-            </Link>
-            <Link href="#pricing" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
+            </a>
+            <a href="/#pricing" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               Pricing
-            </Link>
-            <Link href="#faq" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
+            </a>
+            <a href="/#faq" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               FAQ
-            </Link>
+            </a>
             <Link href="/terms" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               Terms of Service
             </Link>
