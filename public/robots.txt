@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brickandyield.co/sitemap.xml
