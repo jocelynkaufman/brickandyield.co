@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "uih-client-portal"
-  }
+  },
+  "targets": {
+    "uih-client-portal": {
+      "hosting": {
+        "brickandyield-co": [
+          "brickandyield-co"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description:
     "Give your real estate clients a branded mobile app with curated property searches, investor analysis, and in-app messaging. Currently serving Utah agents.",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     siteName: "Brick & Yield",
