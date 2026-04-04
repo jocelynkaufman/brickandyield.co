@@ -25,11 +25,12 @@ export default function JoinForm() {
             data-deactivation-type="neverDeactivate"
             data-deactivation-value=""
             data-form-name="Waitlist"
-            data-height="635"
+            data-height="611"
             data-layout-iframe-id="inline-ss6uUK9BuwAAvyZUHAsd"
             data-form-id="ss6uUK9BuwAAvyZUHAsd"
             title="Waitlist"
-          />
+          >
+          </iframe>
         </div>
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
 
