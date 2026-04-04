@@ -44,6 +44,12 @@ export default function Footer() {
             >
               jocelyn@brickandyield.co
             </a>
+            <a
+              href="tel:+14358307367"
+              className="text-sm text-pitter-patter hover:text-warbler transition-colors"
+            >
+              435-830-7367
+            </a>
           </div>
         </div>
       </div>
