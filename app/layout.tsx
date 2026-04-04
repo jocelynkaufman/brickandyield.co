@@ -76,6 +76,11 @@ export default function RootLayout({
           data-widget-id="69ced920fb68eb1e458e69cd"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://go.brickandyield.co/js/external-tracking.js"
+          data-tracking-id="tk_e7ac32290bc7481b924fc3855c816958"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
