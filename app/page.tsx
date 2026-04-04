@@ -37,8 +37,9 @@ export default function HomePage() {
       </section>
 
       <FAQ />
-      <JoinForm />
-      <CTABanner />
+      {/* Hidden for A2P compliance — using chat widget only for now */}
+      {/* <JoinForm /> */}
+      {/* <CTABanner /> */}
     </>
   );
 }
