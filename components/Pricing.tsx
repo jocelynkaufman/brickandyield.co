@@ -51,12 +51,13 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
+              {/* Hidden for A2P compliance — using chat widget only for now */}
+              {/* <a
                 href="#join"
                 className="mt-8 block w-full text-center rounded-lg bg-warbler px-6 py-3.5 font-semibold text-dark-text transition-colors hover:bg-warbler/90"
               >
                 Join the Waitlist
-              </a>
+              </a> */}
             </div>
           </div>
 

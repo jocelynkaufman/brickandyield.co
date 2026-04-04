@@ -57,12 +57,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
+            {/* Hidden for A2P compliance — using chat widget only for now */}
+            {/* <a
               href={isHome ? "#join" : "/#join"}
               className="rounded-lg bg-warbler px-5 py-2 text-sm font-semibold text-dark-text transition-colors hover:bg-warbler/90"
             >
               Join the Waitlist
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile hamburger */}
@@ -104,13 +105,14 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
+            {/* Hidden for A2P compliance — using chat widget only for now */}
+            {/* <a
               href={isHome ? "#join" : "/#join"}
               className="rounded-lg bg-warbler px-5 py-2.5 text-sm font-semibold text-dark-text text-center transition-colors hover:bg-warbler/90"
               onClick={() => setMenuOpen(false)}
             >
               Join the Waitlist
-            </a>
+            </a> */}
           </div>
         </div>
       )}
