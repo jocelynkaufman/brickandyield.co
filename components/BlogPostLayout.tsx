@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { BlogPost } from "@/content/posts";
+import { CtaFormSection } from "@/content/blog-ctas";
 
 export default function BlogPostLayout({ post }: { post: BlogPost }) {
   const date = new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -48,6 +49,8 @@ export default function BlogPostLayout({ post }: { post: BlogPost }) {
         >
           {post.body}
         </div>
+
+        <CtaFormSection />
       </article>
     </div>
   );

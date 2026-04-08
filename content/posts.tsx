@@ -1,4 +1,29 @@
 import { ReactNode } from "react";
+import { CtaWaitlist, CtaFeatures, CtaPricing, CtaBanner, CtaForm } from "./blog-ctas";
+import { post as stopLosingClientsToZillow } from "./articles/stop-losing-clients-to-zillow";
+import { post as houseHackingUtahGuide } from "./articles/house-hacking-utah-guide";
+import { post as bestRealEstateCrmUtah } from "./articles/best-real-estate-crm-utah";
+import { post as realEstateAgentTechStack2026 } from "./articles/real-estate-agent-tech-stack-2026";
+import { post as keepClientsComingBack } from "./articles/keep-clients-coming-back";
+import { post as investorClientsNeedMore } from "./articles/investor-clients-need-more-than-email-alerts";
+import { post as wasatchFrontTrends2026 } from "./articles/wasatch-front-housing-market-trends-2026";
+import { post as howToWorkWithInvestors } from "./articles/how-to-work-with-real-estate-investors";
+import { post as zillowPremierAgentAlt } from "./articles/zillow-premier-agent-alternative";
+import { post as capRateCashFlowUtah } from "./articles/cap-rate-cash-flow-house-hacks-utah";
+import { post as vsFollowUpBoss } from "./articles/brick-and-yield-vs-follow-up-boss";
+import { post as vsKvcore } from "./articles/brick-and-yield-vs-kvcore";
+import { post as howToSendCuratedListings } from "./articles/how-to-send-curated-listings";
+import { post as whatIsClientPortal } from "./articles/what-is-real-estate-client-portal";
+import { post as wfrmlsIntegration } from "./articles/wfrmls-integration-utah-agents";
+import { post as brandedAppVsIdx } from "./articles/branded-real-estate-app-vs-idx";
+import { post as brokerTeamOversight } from "./articles/broker-team-oversight-tools";
+import { post as bestToolsInvestorAgents } from "./articles/best-tools-real-estate-investor-agents";
+import { post as wasatchFrontTech } from "./articles/wasatch-front-real-estate-technology";
+import { post as crmWithMls } from "./articles/real-estate-crm-with-mls-integration";
+import { post as houseHackingGuide2026 } from "./articles/house-hacking-guide-utah-2026";
+import { post as appWithInvestorAnalysis } from "./articles/real-estate-app-with-investor-analysis";
+import { post as utahAgentCrm } from "./articles/utah-real-estate-agent-crm";
+import { post as listingNotificationApp } from "./articles/real-estate-listing-notification-app";
 
 export interface BlogPost {
   slug: string;
@@ -13,6 +38,30 @@ export interface BlogPost {
 }
 
 export const posts: BlogPost[] = [
+  stopLosingClientsToZillow,
+  houseHackingUtahGuide,
+  bestRealEstateCrmUtah,
+  realEstateAgentTechStack2026,
+  keepClientsComingBack,
+  investorClientsNeedMore,
+  wasatchFrontTrends2026,
+  howToWorkWithInvestors,
+  zillowPremierAgentAlt,
+  capRateCashFlowUtah,
+  vsFollowUpBoss,
+  vsKvcore,
+  howToSendCuratedListings,
+  whatIsClientPortal,
+  wfrmlsIntegration,
+  brandedAppVsIdx,
+  brokerTeamOversight,
+  bestToolsInvestorAgents,
+  wasatchFrontTech,
+  crmWithMls,
+  houseHackingGuide2026,
+  appWithInvestorAnalysis,
+  utahAgentCrm,
+  listingNotificationApp,
   {
     slug: "why-your-clients-deserve-a-branded-app",
     title: "Why Your Clients Deserve a Branded App",
@@ -48,7 +97,8 @@ export const posts: BlogPost[] = [
           With a white-labeled client portal like Brick &amp; Yield, your clients
           see your name, your brokerage, and your contact info — not a
           competitor&apos;s ad. The experience is curated by you: the search
-          criteria, the listings, the investment analysis.
+          criteria, the listings, the investment analysis. Ready to make the
+          switch? <CtaFeatures /> and see how it works.
         </p>
         <p>
           Your client opens their app and sees a professional, branded experience
@@ -56,6 +106,8 @@ export const posts: BlogPost[] = [
           holes. No competing agents. Just the properties you&apos;ve selected
           for them, with the tools they need to make a decision.
         </p>
+
+        <CtaBanner />
 
         <h2>What This Means for Your Business</h2>
         <ul>
@@ -82,8 +134,12 @@ export const posts: BlogPost[] = [
           Your clients deserve better than a generic portal that treats them as a
           lead to be sold. A branded app keeps them engaged, informed, and
           connected to you. That&apos;s the difference between an agent who sends
-          links and an agent who delivers an experience.
+          links and an agent who delivers an experience.{" "}
+          <CtaWaitlist /> today — you can also <CtaPricing /> to find
+          the right plan for your business.
         </p>
+
+        <CtaForm />
       </>
     ),
   },
