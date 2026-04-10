@@ -48,10 +48,10 @@ export default function Footer() {
               jocelyn@brickandyield.co
             </a>
             <a
-              href="tel:+14358307367"
+              href="tel:+18014412557"
               className="text-sm text-pitter-patter hover:text-warbler transition-colors"
             >
-              435-830-7367
+              (801) 441-2557
             </a>
           </div>
         </div>
