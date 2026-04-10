@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-off-white">
+    <section id="pricing" className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-dark-text">
@@ -99,9 +97,6 @@ export default function Pricing() {
           </div>
         </div>
 
-        <p className="text-center mt-12 text-dark-text/60 text-sm max-w-xl mx-auto">
-          Currently available in the <strong>Wasatch Front Regional MLS (Utah)</strong> market. Expanding to additional MLS markets soon.
-        </p>
       </div>
     </section>
   );

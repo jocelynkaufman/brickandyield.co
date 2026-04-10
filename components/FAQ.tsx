@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "Do my clients see a Brick & Yield brand?",
     answer:
-      "No \u2014 the app displays your name, brokerage, and contact info. Brick & Yield is the technology behind the scenes.",
+      "The app is listed as Brick & Yield in the App Store, but once your clients open it, everything inside is branded to you \u2014 your name, your brokerage, your contact info, your colors. Brick & Yield is the technology behind the scenes.",
   },
   {
     question: "Which MLS markets do you support?",
@@ -39,7 +39,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-off-white">
+    <section id="faq" className="py-24 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-dark-text">

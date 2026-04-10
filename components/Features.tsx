@@ -1,8 +1,20 @@
 const features = [
   {
-    title: "Agent-Curated Searches",
+    title: "Your Brand, Not Zillow\u2019s",
     description:
-      "You set up the search criteria. Your clients see only what you want them to see. No search bar — you stay at the center of every deal.",
+      "Your clients aren\u2019t using your IDX site \u2014 they\u2019re on Zillow. Replace outdated email alerts and clunky search pages with a branded mobile app they actually open. Your name, your brokerage, your app on their phone.",
+    icon: (
+      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
+        <rect x="10" y="4" width="20" height="32" rx="4" stroke="currentColor" strokeWidth="2" />
+        <path d="M17 8h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="20" cy="30" r="2" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Curated, Not Searched",
+    description:
+      "You\u2019re not giving clients a search bar. You\u2019re curating properties for them with context only an agent can provide. That\u2019s what makes you irreplaceable.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
@@ -25,33 +37,22 @@ const features = [
     ),
   },
   {
-    title: "Branded Mobile App",
+    title: "Buyer & Seller Portals",
     description:
-      "Your clients download a real app — not a website shortcut. Push notifications for new listings, in-app messaging, and your brand front and center.",
+      "Buyers and sellers each get their own portal. Present offers, send showing feedback, track transactions. Co-buyers and co-sellers get separate logins with shared access. Onboard sellers at the consultation and capture the lead from day one.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <rect x="10" y="4" width="20" height="32" rx="4" stroke="currentColor" strokeWidth="2" />
-        <path d="M17 8h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="20" cy="30" r="2" stroke="currentColor" strokeWidth="2" />
+        <rect x="4" y="6" width="14" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
+        <rect x="22" y="6" width="14" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
+        <path d="M8 12h6M24 12h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8 18h6M24 18h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
   {
-    title: "Mortgage & Net Sheet Tools",
+    title: "Built for Agents and Brokers",
     description:
-      "Built-in mortgage calculators and seller net sheets right at the listing level. Clients can run their own numbers without leaving the app.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <rect x="6" y="6" width="28" height="28" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M6 14h28M14 14v20M26 14v20" stroke="currentColor" strokeWidth="2" />
-        <path d="M18 20h4M18 26h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    title: "Broker & Team Oversight",
-    description:
-      "Manage your agents, see their pipeline, and maintain oversight of every client relationship. Built for independent broker-owners who want control.",
+      "Whether you\u2019re an independent agent or running a brokerage, Brick & Yield scales with you. Broker dashboard gives you oversight of every agent\u2019s pipeline without adding busywork.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
         <circle cx="20" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
@@ -62,13 +63,14 @@ const features = [
     ),
   },
   {
-    title: "No CRM Required",
+    title: "Learn Tab",
     description:
-      "Brick & Yield works standalone. No existing CRM needed. Manage your active clients, their searches, transactions, and communications in one place.",
+      "Curate educational content for your clients so you don\u2019t answer the same questions every transaction. First-time buyer guides, investment basics, market updates \u2014 all branded to you.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-10 h-10">
-        <path d="M8 10h24v22H8z" stroke="currentColor" strokeWidth="2" rx="3" />
-        <path d="M14 18l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6 8h12v24H6zM22 8h12v24H22z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M18 8v24" stroke="currentColor" strokeWidth="2" />
+        <path d="M10 14h4M10 20h4M26 14h4M26 20h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -83,7 +85,7 @@ export default function Features() {
             What You Get
           </h2>
           <p className="mt-4 text-lg text-dark-text/70 max-w-2xl mx-auto">
-            Everything your clients need — branded, curated, and built to keep them coming back to you.
+            CRM + IDX in one platform — built by an agent, for solo agents and broker teams alike. Make yourself irreplaceable.
           </p>
         </div>
 

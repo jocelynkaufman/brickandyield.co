@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
+import MLSRegions from "@/components/MLSRegions";
+import Replacing from "@/components/Replacing";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import JoinForm from "@/components/JoinForm";
@@ -12,10 +14,12 @@ export default function HomePage() {
       <Hero />
       <Features />
       <HowItWorks />
+      <MLSRegions />
+      <Replacing />
       <Pricing />
 
       {/* Social Proof / Founder Story */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-off-white">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <p className="font-[family-name:var(--font-heading)] text-2xl md:text-3xl text-dark-text leading-snug">
             &ldquo;Built by a Utah real estate agent who got tired of losing
