@@ -71,6 +71,18 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YGDF6446FR"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YGDF6446FR');
+          `}
+        </Script>
+        <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
           data-widget-id="69ced920fb68eb1e458e69cd"
