@@ -27,6 +27,9 @@ export default function Footer() {
             <a href="/#faq" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               FAQ
             </a>
+            <Link href="/blog" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
+              Blog
+            </Link>
             <Link href="/terms" className="text-sm text-pitter-patter hover:text-warbler transition-colors">
               Terms of Service
             </Link>
