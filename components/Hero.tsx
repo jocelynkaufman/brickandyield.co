@@ -15,13 +15,12 @@ export default function Hero() {
             your clients stay with you, not Zillow.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            {/* Hidden for A2P compliance — using chat widget only for now */}
-            {/* <a
+            <a
               href="#join"
               className="inline-flex items-center justify-center rounded-lg bg-warbler px-8 py-3.5 text-base font-semibold text-dark-text transition-colors hover:bg-warbler/90"
             >
               Join the Waitlist
-            </a> */}
+            </a>
             <a
               href="#how-it-works"
               className="inline-flex items-center justify-center rounded-lg border-2 border-pitter-patter px-8 py-3.5 text-base font-semibold text-pitter-patter transition-colors hover:bg-pitter-patter/10"
