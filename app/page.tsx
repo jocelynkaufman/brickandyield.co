@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import AppScreenshots from "@/components/AppScreenshots";
 import HowItWorks from "@/components/HowItWorks";
 import MLSRegions from "@/components/MLSRegions";
 import Replacing from "@/components/Replacing";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Features />
+      <AppScreenshots />
       <HowItWorks />
       <MLSRegions />
       <Replacing />

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s \u2014 Brick & Yield",
   },
   description:
-    "Give your real estate clients a branded mobile app with curated property searches, investor analysis, and in-app messaging. Currently serving Utah agents.",
+    "Branded mobile app and CRM for real estate agents — client pipeline, transaction management, investment analysis, and in-app messaging. Replace your IDX site, CRM, and spreadsheets.",
   icons: {
     icon: "/favicon.png",
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://brickandyield.co",
     title: "Brick & Yield \u2014 Agent-Branded Client Portal for Real Estate",
     description:
-      "Give your real estate clients a branded mobile app with curated property searches, investor analysis, and in-app messaging. Currently serving Utah agents.",
+      "Branded mobile app and CRM for real estate agents — client pipeline, transaction management, investment analysis, and in-app messaging. Replace your IDX site, CRM, and spreadsheets.",
   },
 };
 

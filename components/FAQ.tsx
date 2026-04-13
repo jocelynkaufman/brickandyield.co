@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "Do I need a CRM to use this?",
     answer:
-      "No. Brick & Yield includes client management, messaging, and pipeline stages. If you already use a CRM like GoHighLevel, we can integrate.",
+      "No. Brick & Yield includes client management, messaging, and pipeline stages. If you already use another CRM, we integrate with Zapier to connect your existing tools.",
   },
   {
     question: "What does my client see?",

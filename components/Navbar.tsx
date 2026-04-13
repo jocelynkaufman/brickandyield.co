@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -49,7 +50,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={isHome ? link.href : `/${link.href}`}
+                href={link.href.startsWith("/") ? link.href : isHome ? link.href : `/${link.href}`}
                 className={`text-sm font-medium transition-colors hover:text-warbler ${
                   useDarkText ? "text-dark-text" : "text-light-text"
                 }`}
@@ -97,7 +98,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.label}
-                href={isHome ? link.href : `/${link.href}`}
+                href={link.href.startsWith("/") ? link.href : isHome ? link.href : `/${link.href}`}
                 className="text-dark-text text-sm font-medium hover:text-warbler"
                 onClick={() => setMenuOpen(false)}
               >

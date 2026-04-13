@@ -175,7 +175,7 @@ export default function PrivacyPage() {
                 <strong>Service Providers:</strong> We share information with third-party service
                 providers who help us operate our platform, including cloud infrastructure
                 (Google/Firebase, Supabase), email and messaging services (SendGrid/Twilio),
-                payment processing (Stripe), and CRM services (GoHighLevel). These providers
+                payment processing (Stripe), and automation services (Zapier). These providers
                 are contractually obligated to protect your information and use it only for the
                 purposes we specify.
               </li>
@@ -358,9 +358,9 @@ export default function PrivacyPage() {
                 </a>
               </li>
               <li>
-                <strong>GoHighLevel</strong> — CRM and form services.{" "}
-                <a href="https://www.gohighlevel.com/privacy-policy" className="text-oracle underline hover:text-warbler" target="_blank" rel="noopener noreferrer">
-                  GoHighLevel Privacy Policy
+                <strong>Zapier</strong> — Automation and integration services.{" "}
+                <a href="https://zapier.com/privacy" className="text-oracle underline hover:text-warbler" target="_blank" rel="noopener noreferrer">
+                  Zapier Privacy Policy
                 </a>
               </li>
             </ul>
