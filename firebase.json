@@ -3,6 +3,7 @@
     "site": "brickandyield-co",
     "public": "out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
     "headers": [
       {
         "source": "sitemap.xml",

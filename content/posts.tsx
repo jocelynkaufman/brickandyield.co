@@ -24,6 +24,11 @@ import { post as houseHackingGuide2026 } from "./articles/house-hacking-guide-ut
 import { post as appWithInvestorAnalysis } from "./articles/real-estate-app-with-investor-analysis";
 import { post as utahAgentCrm } from "./articles/utah-real-estate-agent-crm";
 import { post as listingNotificationApp } from "./articles/real-estate-listing-notification-app";
+import { post as aduInvestmentUtah } from "./articles/adu-investment-utah";
+import { post as crmForAgents } from "./articles/real-estate-crm-for-agents";
+import { post as automationForAgents } from "./articles/real-estate-automation-for-agents";
+import { post as investmentPropertyAnalysisApp } from "./articles/investment-property-analysis-app";
+import { post as vsLofty } from "./articles/brick-and-yield-vs-lofty";
 
 export interface BlogPost {
   slug: string;
@@ -62,6 +67,11 @@ export const posts: BlogPost[] = [
   appWithInvestorAnalysis,
   utahAgentCrm,
   listingNotificationApp,
+  aduInvestmentUtah,
+  crmForAgents,
+  automationForAgents,
+  investmentPropertyAnalysisApp,
+  vsLofty,
   {
     slug: "why-your-clients-deserve-a-branded-app",
     title: "Why Your Clients Deserve a Branded App",
