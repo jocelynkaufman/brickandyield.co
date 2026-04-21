@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const screenshots = [
   {
     src: "/images/2.png",
@@ -39,12 +41,12 @@ export default function AppScreenshots() {
           {screenshots.map((shot) => (
             <div key={shot.src} className="flex flex-col items-center gap-4">
               <div className="relative w-full aspect-[9/19] rounded-2xl overflow-hidden bg-misty-aqua/20 border border-misty-aqua/30 shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={shot.src}
                   alt={shot.alt}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 45vw, 22vw"
                 />
               </div>
               <p className="text-sm text-dark-text/70 text-center font-medium">
