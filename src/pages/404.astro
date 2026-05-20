@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page Not Found">
+  <section class="py-28 md:py-36 bg-gradient-to-br from-brand-light-green/25 via-white to-brand-orange/10">
+    <div class="mx-auto max-w-xl px-6 text-center">
+      <p class="text-7xl font-bold text-brand-dark-green">404</p>
+      <p class="mt-4 text-lg text-gray-600">
+        This page doesn’t exist. It may have been moved or removed.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          href="/"
+          class="rounded-lg bg-brand-dark-green px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-green"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/blog"
+          class="rounded-lg border border-gray-200 px-6 py-3 font-semibold text-gray-700 transition-colors hover:bg-gray-50"
+        >
+          Read the Blog
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

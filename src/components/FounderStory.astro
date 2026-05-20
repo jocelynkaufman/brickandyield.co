@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import founderBg from "../assets/founder-bg.jpg";
+import jocelyn from "../assets/jocelyn-stoddard.jpg";
+---
+
+<section class="py-16 md:py-24 bg-brand-dark-green relative overflow-hidden">
+  <!-- Background photo + dark overlay -->
+  <div class="absolute inset-0 pointer-events-none">
+    <Image
+      src={founderBg}
+      alt=""
+      aria-hidden="true"
+      class="w-full h-full object-cover"
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      loading="lazy"
+    />
+    <div class="absolute inset-0" style="background:rgba(57,86,89,0.92)"></div>
+  </div>
+  <div class="absolute -bottom-32 -right-24 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <figure class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <blockquote>
+      <p class="text-2xl md:text-3xl lg:text-4xl font-bold italic text-white leading-snug">
+        &ldquo;Built by a Utah real estate agent who got tired of losing clients
+        to Zillow.&rdquo;
+      </p>
+    </blockquote>
+
+    <!-- Attribution -->
+    <figcaption class="mt-10 flex items-center justify-center gap-4">
+      <Image
+        src={jocelyn}
+        alt="Jocelyn Stoddard, founder of Brick & Yield"
+        width={128}
+        height={128}
+        class="h-16 w-16 rounded-full object-cover object-top ring-2 ring-brand-orange/60"
+        loading="lazy"
+      />
+      <div class="text-left">
+        <div class="text-white font-bold">Jocelyn Stoddard</div>
+        <div class="text-brand-light-green text-sm">
+          Founder of <a
+            href="https://stoddgroup.com"
+            target="_blank"
+            rel="noopener"
+            class="text-white underline underline-offset-2 hover:text-brand-orange transition-colors"
+          >StoddGroup</a>, Brick &amp; Yield &middot; Utah agent &amp; investor
+        </div>
+      </div>
+    </figcaption>
+
+    <!-- Bio -->
+    <div class="mt-8 text-brand-light-green leading-relaxed max-w-xl mx-auto space-y-4">
+      <p>
+        Jocelyn built Brick &amp; Yield because she needed it for her own
+        business first. After watching too many clients drift to the big
+        portals, she designed a platform that keeps agents at the center of
+        every relationship.
+      </p>
+      <p>
+        Now she’s licensing it to other agents and brokers who want the same
+        edge.
+      </p>
+    </div>
+  </figure>
+</section>

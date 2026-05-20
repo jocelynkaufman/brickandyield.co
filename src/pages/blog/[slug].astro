@@ -1,0 +1,204 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import ArticleBody from "../../components/ArticleBody.tsx";
+import { posts } from "@/content/posts";
+import { getCover } from "../../lib/blogCovers";
+import jocelyn from "../../assets/jocelyn-stoddard.jpg";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const cover = getCover(post.slug);
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+const date = fmt(post.publishedAt);
+
+// Related posts: prefer shared tags, then most recent
+const related = posts
+  .filter((p) => p.slug !== post.slug)
+  .map((p) => ({
+    p,
+    score: (p.tags ?? []).filter((t) => (post.tags ?? []).includes(t)).length,
+  }))
+  .sort(
+    (a, b) =>
+      b.score - a.score ||
+      new Date(b.p.publishedAt).getTime() - new Date(a.p.publishedAt).getTime()
+  )
+  .slice(0, 3)
+  .map((x) => x.p);
+
+const canonical = `https://brickandyield.co/blog/${post.slug}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.publishedAt,
+  ...(post.updatedAt && { dateModified: post.updatedAt }),
+  author: { "@type": "Person", name: post.author },
+  publisher: {
+    "@type": "Organization",
+    name: "Brick and Yield LLC",
+    url: "https://brickandyield.co",
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  ...(cover && { image: new URL(cover.src, "https://brickandyield.co").toString() }),
+};
+---
+
+<Base
+  title={post.title}
+  description={post.description}
+  canonical={canonical}
+  ogType="article"
+  ogImage={cover?.src}
+  publishedTime={post.publishedAt}
+  modifiedTime={post.updatedAt}
+  jsonLd={jsonLd}
+>
+  <article class="bg-white pt-10 md:pt-14 pb-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 text-sm font-medium text-brand-dark-green hover:text-brand-dark-orange transition-colors mb-8"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Blog
+      </a>
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+        {post.title}
+      </h1>
+      <p class="text-gray-500 mb-8">{date} &middot; {post.author}</p>
+
+      {
+        cover && (
+          <Image
+            src={cover}
+            alt={post.title}
+            widths={[640, 960, 1280]}
+            sizes="(max-width: 768px) 100vw, 768px"
+            class="w-full aspect-[16/9] object-cover rounded-2xl mb-10 shadow-sm"
+            loading="eager"
+          />
+        )
+      }
+
+      <div class="prose-article">
+        <ArticleBody body={post.body} />
+      </div>
+
+      <!-- Author bio -->
+      <div class="mt-12 pt-8 border-t border-gray-100 flex items-start gap-4">
+        <Image
+          src={jocelyn}
+          alt="Jocelyn Stoddard"
+          width={128}
+          height={128}
+          class="h-16 w-16 rounded-full object-cover object-top flex-shrink-0"
+        />
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-dark-orange mb-1">
+            Written by
+          </p>
+          <p class="font-bold text-gray-900">Jocelyn Stoddard</p>
+          <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+            Founder of Brick &amp; Yield and StoddGroup — a Utah real estate
+            agent and investor who built Brick &amp; Yield to keep agents at the
+            center of every client relationship.
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related posts -->
+  {
+    related.length > 0 && (
+      <section class="bg-gray-100 py-16">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Keep reading
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {related.map((p) => (
+              <a
+                href={`/blog/${p.slug}`}
+                class="group block rounded-2xl bg-white border border-gray-100 shadow-sm p-6 transition-shadow hover:shadow-lg"
+              >
+                <p class="text-xs font-semibold text-brand-dark-orange mb-2">
+                  {fmt(p.publishedAt)}
+                </p>
+                <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-dark-green transition-colors mb-2 line-clamp-2">
+                  {p.title}
+                </h3>
+                <p class="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                  {p.description}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Waitlist form -->
+  <section id="blog-form" class="bg-brand-dark-green py-16 scroll-mt-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">
+        Get Early Access to Brick &amp; Yield
+      </h2>
+      <p class="text-brand-light-green text-base mb-8 max-w-xl mx-auto">
+        Join the waitlist and lock in the founder’s rate. We’ll reach out to get
+        you set up.
+      </p>
+
+      <div class="w-full max-w-lg mx-auto">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/ss6uUK9BuwAAvyZUHAsd"
+          style="width:100%;height:100%;border:none;border-radius:8px;background:#fff"
+          id="blog-form-ss6uUK9BuwAAvyZUHAsd"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Waitlist"
+          data-height="611"
+          data-layout-iframe-id="blog-form-ss6uUK9BuwAAvyZUHAsd"
+          data-form-id="ss6uUK9BuwAAvyZUHAsd"
+          title="Waitlist"></iframe>
+      </div>
+
+      <p class="mt-8 text-xs text-brand-light-green/80 max-w-lg mx-auto leading-relaxed">
+        By submitting this form, you agree to receive text messages from Brick and
+        Yield LLC regarding our platform and real estate technology services.
+        Message frequency varies. Message and data rates may apply. Reply STOP to
+        opt out at any time. Reply HELP for help. See our
+        <a href="/terms" class="underline hover:text-brand-orange">Terms of Service</a>
+        and
+        <a href="/privacy" class="underline hover:text-brand-orange">Privacy Policy</a>.
+      </p>
+    </div>
+    <script is:inline src="https://link.msgsndr.com/js/form_embed.js"></script>
+  </section>
+</Base>

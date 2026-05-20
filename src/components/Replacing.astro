@@ -1,0 +1,49 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+
+const items = [
+  { tool: "IDX Website", cost: "$50–150/mo", note: "Clients don’t use it — they use Zillow. Replace it with an app they actually open." },
+  { tool: "CRM", cost: "$50–300/mo", note: "Manage active clients, messaging, and pipeline stages without a bloated CRM." },
+  { tool: "Spreadsheets & Notes", cost: "Free but painful", note: "Stop tracking investor analysis, transaction checklists, and client notes across 5 apps." },
+  { tool: "Email Alert Systems", cost: "$25–75/mo", note: "Push notifications to a branded app beat buried emails every time." },
+];
+---
+
+<section class="py-16 md:py-24 bg-gradient-to-b from-brand-light-green/15 to-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="What You’re Replacing"
+      title="One Platform, Less Overhead"
+      subtitle="Brick & Yield replaces tools you’re already paying for — or works alongside them. Either way, you come out ahead."
+    />
+
+    <div class="space-y-4">
+      {
+        items.map((item) => (
+          <div class="flex flex-col md:flex-row md:items-center justify-between bg-white rounded-xl border border-gray-100 shadow-sm px-6 py-4 gap-2">
+            <div class="flex-1">
+              <div class="flex items-center gap-3">
+                <span class="font-semibold text-gray-900">{item.tool}</span>
+                <span class="text-xs text-gray-500 bg-gray-100 rounded-full px-2.5 py-0.5">
+                  {item.cost}
+                </span>
+              </div>
+              <p class="text-sm text-gray-500 mt-1">{item.note}</p>
+            </div>
+            <div class="shrink-0 text-brand-dark-green font-semibold text-sm whitespace-nowrap">
+              Replaced by B&amp;Y
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 text-center bg-brand-dark-green/5 rounded-2xl border border-brand-dark-green/15 px-6 py-8">
+      <p class="text-gray-600 text-sm">
+        Most agents spend <strong class="text-gray-900">$175–525/mo</strong> on
+        tools Brick &amp; Yield replaces.
+      </p>
+      <p class="mt-1 text-2xl font-bold text-brand-dark-green">You pay $69/mo.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Sign Up & Get Licensed",
+    description:
+      "Choose your plan and get access to the admin portal and branded client app within 24 hours.",
+  },
+  {
+    number: "02",
+    title: "Set Up Your Clients",
+    description:
+      "Add your clients, configure their search criteria, and invite them to download the app.",
+  },
+  {
+    number: "03",
+    title: "Let the Portal Work",
+    description:
+      "Clients get curated listings with investment metrics. You get notified when they’re engaged. No more chasing.",
+  },
+];
+---
+
+<section id="how-it-works" class="py-16 md:py-24 bg-brand-dark-green relative overflow-hidden">
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+      <p class="text-brand-orange font-semibold mb-3 text-sm uppercase tracking-wide">
+        How It Works
+      </p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        Up and Running in Three Steps
+      </h2>
+      <p class="text-lg text-brand-light-green">
+        No long onboarding. No technical setup. Just your clients, your brand.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {
+        steps.map((step) => (
+          <div class="relative text-center md:text-left">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-orange/20 mb-6">
+              <span class="text-2xl font-bold text-brand-orange" style="font-family: var(--font-heading)">
+                {step.number}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{step.title}</h3>
+            <p class="text-brand-light-green leading-relaxed">{step.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

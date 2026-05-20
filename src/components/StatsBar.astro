@@ -1,0 +1,27 @@
+---
+const stats = [
+  { value: "$175–525", suffix: "/mo", label: "in tool subscription savings" },
+  { value: "40+", suffix: "", label: "MLS filters incl. investor analysis" },
+  { value: "24 hrs", suffix: "", label: "from sign-up to live branded app" },
+  { value: "100%", suffix: "", label: "your brand — never Zillow’s" },
+];
+---
+
+<section class="bg-white border-b border-gray-100 py-10 md:py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      {
+        stats.map((s) => (
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-brand-dark-green">
+              {s.value}<span class="text-brand-dark-orange">{s.suffix}</span>
+            </div>
+            <div class="text-sm text-gray-500 mt-2 max-w-[14rem] mx-auto leading-snug">
+              {s.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,111 @@
+---
+const navLinks = [
+  { label: "Features", href: "/#features" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Blog", href: "/blog" },
+];
+---
+
+<header
+  class="bg-white/95 border-b border-gray-100 fixed top-0 left-0 right-0 z-50 shadow-md"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="flex justify-between items-center gap-4">
+      <a
+        href="/"
+        class="flex items-center gap-3 hover:opacity-80 transition-opacity flex-shrink-0"
+      >
+        <img
+          src="/favicon.png"
+          alt="Brick & Yield logo"
+          width="48"
+          height="48"
+          class="h-12 w-12 rounded-lg"
+        />
+        <span class="flex flex-col leading-none">
+          <span
+            class="text-xl font-bold text-brand-dark-green"
+            style="font-family: var(--font-heading)"
+          >
+            Brick &amp; Yield
+          </span>
+          <span class="text-[0.7rem] font-medium text-gray-400 mt-1">
+            Powered by StoddGroup
+          </span>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-2 flex-shrink-0">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-gray-700 hover:text-brand-dark-green hover:bg-brand-light-green/30 font-medium transition-all px-4 py-2 rounded-lg"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href="/#join"
+          class="inline-flex items-center gap-2 bg-brand-dark-green text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-green transition-colors"
+        >
+          Join the Waitlist
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 text-brand-dark-green flex-shrink-0"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2">
+      <div class="flex flex-col gap-3">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-gray-700 hover:text-brand-dark-green font-medium transition-colors py-2"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href="/#join"
+          class="inline-flex items-center justify-center gap-2 bg-brand-dark-green text-white px-6 py-2 rounded-lg font-semibold hover:bg-brand-green transition-colors"
+        >
+          Join the Waitlist
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    if (btn && menu) {
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      menu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => menu.classList.add("hidden"))
+      );
+    }
+  })();
+</script>

@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import SectionHeading from "./SectionHeading.astro";
+import shot1 from "../assets/1.png";
+import shot2 from "../assets/2.png";
+import shot3 from "../assets/3.png";
+import shot4 from "../assets/4.png";
+
+const screenshots = [
+  {
+    src: shot2,
+    alt: "Brick & Yield client app — review curated properties from your agent",
+    caption: "Review curated properties",
+  },
+  {
+    src: shot4,
+    alt: "Brick & Yield client app — saved properties with cap rate and cash flow analysis",
+    caption: "Cap rate & cash flow on every listing",
+  },
+  {
+    src: shot3,
+    alt: "Brick & Yield client app — learn guides for every step of the process",
+    caption: "Built-in guides for every step",
+  },
+  {
+    src: shot1,
+    alt: "Brick & Yield client app — track your buying journey and milestones",
+    caption: "Track your buying journey",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-gradient-to-b from-white to-brand-light-green/15">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="What Your Clients See"
+      title="The App Your Clients Will Love"
+      subtitle="A native mobile experience that keeps clients engaged — and off Zillow."
+    />
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+      {
+        screenshots.map((shot) => (
+          <div class="flex flex-col items-center gap-4">
+            <div class="relative w-full aspect-[9/19] rounded-[1.75rem] overflow-hidden bg-gray-900 border-[6px] border-gray-900 shadow-xl">
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                class="w-full h-full object-cover"
+                widths={[200, 400]}
+                sizes="(max-width: 768px) 45vw, 22vw"
+                loading="lazy"
+              />
+            </div>
+            <p class="text-sm text-gray-600 text-center font-medium">
+              {shot.caption}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

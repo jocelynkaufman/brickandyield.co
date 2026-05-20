@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Script from "next/script";
-
 /* ──────────────────────────────────────────────
    EDIT THESE VALUES to update every blog CTA
    ────────────────────────────────────────────── */
@@ -45,12 +42,12 @@ export function CtaForm() {
 export function CtaLink({ to }: { to: keyof typeof CTA_LINKS }) {
   const { href, label } = CTA_LINKS[to];
   return (
-    <Link
+    <a
       href={href}
       className="text-warbler underline underline-offset-2 hover:text-warbler/80 transition-colors"
     >
       {label}
-    </Link>
+    </a>
   );
 }
 
@@ -65,17 +62,17 @@ export function CtaBanner({
 }) {
   const { href, label } = CTA_LINKS[linkTo];
   return (
-    <aside className="my-10 rounded-lg bg-oracle/10 border border-oracle/20 px-6 py-8 text-center">
-      <p className="font-[family-name:var(--font-heading)] text-xl text-dark-text mb-2">
+    <aside className="my-10 rounded-2xl bg-brand-dark-green/5 border border-brand-dark-green/15 px-6 py-8 text-center">
+      <p className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "var(--font-heading)" }}>
         {heading}
       </p>
-      <p className="text-dark-text/70 mb-4">{text}</p>
-      <Link
+      <p className="text-gray-600 mb-4">{text}</p>
+      <a
         href={href}
-        className="inline-block rounded-md bg-oracle px-6 py-2.5 text-sm font-medium text-white hover:bg-oracle/90 transition-colors"
+        className="inline-block rounded-lg bg-brand-dark-green px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-green transition-colors no-underline"
       >
         {label}
-      </Link>
+      </a>
     </aside>
   );
 }
@@ -121,20 +118,18 @@ export function CtaFormSection({
           title="Waitlist"
         />
       </div>
-      <Script src={FORM_SCRIPT} strategy="afterInteractive" />
-
       <p className="mt-8 text-xs text-pitter-patter/80 max-w-lg mx-auto leading-relaxed">
         By submitting this form, you agree to receive text messages from Brick
         and Yield LLC regarding our platform and real estate technology services.
         Message frequency varies. Message and data rates may apply. Reply STOP to
         opt out at any time. Reply HELP for help. See our{" "}
-        <Link href="/terms" className="underline hover:text-warbler">
+        <a href="/terms" className="underline hover:text-warbler">
           Terms of Service
-        </Link>{" "}
+        </a>{" "}
         and{" "}
-        <Link href="/privacy" className="underline hover:text-warbler">
+        <a href="/privacy" className="underline hover:text-warbler">
           Privacy Policy
-        </Link>
+        </a>
         .
       </p>
     </section>

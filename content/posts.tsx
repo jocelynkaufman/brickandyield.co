@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { CtaWaitlist, CtaFeatures, CtaPricing, CtaBanner, CtaForm } from "./blog-ctas";
 import { post as stopLosingClientsToZillow } from "./articles/stop-losing-clients-to-zillow";
 import { post as houseHackingUtahGuide } from "./articles/house-hacking-utah-guide";
