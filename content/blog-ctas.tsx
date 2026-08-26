@@ -6,12 +6,8 @@ const CTA_LINKS = {
   features: { href: "/#features", label: "See what Brick & Yield offers" },
   pricing: { href: "/#pricing", label: "View pricing" },
   howItWorks: { href: "/#how-it-works", label: "See how it works" },
-  join: { href: "#blog-form", label: "Join the waitlist" },
+  join: { href: "https://admin.brickandyield.app/sign-up", label: "Sign Up" },
 };
-
-const FORM_ID = "ss6uUK9BuwAAvyZUHAsd";
-const FORM_SRC = `https://api.leadconnectorhq.com/widget/form/${FORM_ID}`;
-const FORM_SCRIPT = "https://link.msgsndr.com/js/form_embed.js";
 
 /* ──────────────────────────────────────────────
    Inline link — drop into any paragraph
@@ -74,64 +70,5 @@ export function CtaBanner({
         {label}
       </a>
     </aside>
-  );
-}
-
-/* ──────────────────────────────────────────────
-   Bottom-of-article form section
-   ────────────────────────────────────────────── */
-
-export function CtaFormSection({
-  heading = "Get Early Access to Brick & Yield",
-  text = "Join the waitlist and lock in the founder's rate. We'll reach out to get you set up.",
-}) {
-  return (
-    <section id="blog-form" className="mt-16 rounded-lg bg-oracle px-6 py-12 text-center scroll-mt-24">
-      <h2 className="font-[family-name:var(--font-heading)] text-2xl md:text-3xl text-white mb-2">
-        {heading}
-      </h2>
-      <p className="text-pitter-patter text-base mb-8 max-w-xl mx-auto">
-        {text}
-      </p>
-
-      <div className="w-full max-w-lg mx-auto">
-        <iframe
-          src={FORM_SRC}
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "3px",
-          }}
-          id={`blog-form-${FORM_ID}`}
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Waitlist"
-          data-height="611"
-          data-layout-iframe-id={`blog-form-${FORM_ID}`}
-          data-form-id={FORM_ID}
-          title="Waitlist"
-        />
-      </div>
-      <p className="mt-8 text-xs text-pitter-patter/80 max-w-lg mx-auto leading-relaxed">
-        By submitting this form, you agree to receive text messages from Brick
-        and Yield LLC regarding our platform and real estate technology services.
-        Message frequency varies. Message and data rates may apply. Reply STOP to
-        opt out at any time. Reply HELP for help. See our{" "}
-        <a href="/terms" className="underline hover:text-warbler">
-          Terms of Service
-        </a>{" "}
-        and{" "}
-        <a href="/privacy" className="underline hover:text-warbler">
-          Privacy Policy
-        </a>
-        .
-      </p>
-    </section>
   );
 }
