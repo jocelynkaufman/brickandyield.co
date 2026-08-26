@@ -2,18 +2,18 @@
 import SectionHeading from "./SectionHeading.astro";
 
 const features = [
-  "Branded client app (iOS)",
-  "Full client pipeline with stages",
-  "Transaction management & deadline tracking",
-  "Commission calculator",
-  "40+ MLS search filters incl. investment analysis",
-  "Calendar with Google Calendar sync",
-  "In-app messaging (general + property-specific)",
-  "Buyer & seller portals",
-  "Household & co-buyer support",
-  "Zapier integration",
-  "Push notifications",
-  "Learn tab for client education",
+  { label: "Branded client app (iOS)" },
+  { label: "Full client pipeline with stages" },
+  { label: "Transaction management & deadline tracking" },
+  { label: "Commission calculator" },
+  { label: "40+ MLS search filters incl. investment analysis" },
+  { label: "Calendar with Google Calendar sync" },
+  { label: "In-app messaging (general + property-specific)" },
+  { label: "Buyer & seller portals" },
+  { label: "Household & co-buyer support" },
+  { label: "Zapier integration", comingSoon: true },
+  { label: "Push notifications" },
+  { label: "Learn tab for client education" },
 ];
 ---
 
@@ -53,7 +53,14 @@ const features = [
                   <svg class="w-5 h-5 text-brand-dark-green mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
-                  {item}
+                  <span>
+                    {item.label}
+                    {item.comingSoon && (
+                      <span class="ml-2 whitespace-nowrap rounded-full bg-brand-light-green/60 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-brand-dark-green">
+                        Coming soon
+                      </span>
+                    )}
+                  </span>
                 </li>
               ))
             }
